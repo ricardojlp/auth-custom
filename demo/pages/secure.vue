@@ -27,7 +27,7 @@
     </b-row>
     <hr />
     <b-btn-group>
-      <b-button @click="$auth.fetchUser()"> Fetch User </b-button>
+      <b-button @click="user"> Fetch User </b-button>
       <b-button @click="refreshTokens"> Refresh Tokens </b-button>
       <b-button @click="$auth.logout()"> Logout </b-button>
     </b-btn-group>
@@ -47,8 +47,30 @@ export default Vue.extend({
   methods: {
     refreshTokens() {
       this.$auth.refreshTokens().catch((e) => {
-        this.error = e + ''
-      })
+          this.error = e + ''
+        })
+        this.$auth.refreshTokens().catch((e) => {
+          this.error = e + ''
+        })
+        this.$auth.refreshTokens().catch((e) => {
+          this.error = e + ''
+        })
+        this.$auth.refreshTokens().catch((e) => {
+          this.error = e + ''
+        })
+      
+    },
+    user() {
+     
+      this.$auth.fetchUser();
+      this.$auth.fetchUser();
+      this.$auth.fetchUser();
+      this.$auth.fetchUser();
+      this.$auth.fetchUser();
+      this.$auth.fetchUser();
+      this.$auth.fetchUser();
+      this.$auth.fetchUser();
+      
     }
   }
 })

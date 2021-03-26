@@ -33,7 +33,7 @@ export default <NuxtConfig>{
         scheme: 'refresh',
         token: {
           property: 'token.accessToken',
-          maxAge: 15
+          maxAge: 0.5
         },
         refreshToken: {
           property: 'token.refreshToken',

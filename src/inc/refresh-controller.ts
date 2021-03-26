@@ -10,15 +10,13 @@ export class RefreshController {
   }
 
   // Multiple requests will be queued until the first has completed token refresh.
-  console.log("BEFORE - handleRefresh");
   handleRefresh(): Promise<HTTPResponse | void> {
+    console.log("AAA")
     // Another request has started refreshing the token, wait for it to complete
     if (this._refreshPromise) {
-		console.log("ADDING AS A PROMISE - handleRefresh");
       return this._refreshPromise
     }
 
-	console.log("DO REFRESH - handleRefresh");
     return this._doRefresh()
   }
 
