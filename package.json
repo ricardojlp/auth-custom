@@ -25,7 +25,7 @@
     "index.d.ts"
   ],
   "scripts": {
-    "build": "siroc build && yarn build:types",
+    "build": "nuxt build --standalone",
     "build:types": "./scripts/types.sh",
     "bump-next": "jiti ./scripts/bump-next",
     "dev": "nuxt-ts demo",
